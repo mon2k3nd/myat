@@ -149,9 +149,13 @@ function WeddingInvitation() {
   async function submitWish(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); setWishStatus("Đang gửi...");
     const formElement = event.currentTarget;
-    const form = new FormData(formElement); const guest_name = String(form.get("wishName") ?? ""); const message = String(form.get("message") ?? "");
-    const wish = { id: crypto.randomUUID(), guest_name, message };
-    setWishes((current) => [wish, ...current]);
+    const form = new FormData(formElement);
+    const guest_name = String(form.get("wishName") ?? "").trim();
+    const message = String(form.get("message") ?? "").trim();
+    if (!guest_name || !message) { setWishStatus("Vui lòng nhập tên và lời chúc."); return; }
+    const { data, error } = await supabase.from("wishes").insert({ guest_name, message }).select("id, guest_name, message").single();
+    if (error || !data) { setWishStatus("Gửi chưa thành công, bạn thử lại giúp mình nhé."); return; }
+    setWishes((current) => [data, ...current]);
     setWishStatus("Lời chúc đã được gửi đến hai chúng mình.");
     formElement.reset();
   }
