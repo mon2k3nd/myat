@@ -1,0 +1,28 @@
+# Roadmap
+
+- [x] Thay phong bì bằng intro điện ảnh dài khoảng 16–18 giây.
+- [x] Chạy các câu chữ kể chuyện theo nhịp, sau đó cho ảnh cưới bay mềm như lông vũ.
+- [x] Tạo cú chuyển cảnh lớn từ ảnh trung tâm vào ảnh cưới toàn màn hình.
+- [x] Có nút bỏ qua để khách không buộc phải chờ.
+- [x] Kiểm tra trên điện thoại và máy tính.
+- [x] Đổi câu chuyện sang hiệu ứng gõ chữ liên tục, giữ lại toàn bộ câu đã gõ.
+- [x] Bỏ toàn bộ ảnh bay qua màn hình.
+- [x] Dùng chung khung ảnh cuối intro và đầu trang để chuyển cảnh liền mạch.
+- [x] Làm lại nhịp xuất hiện chữ mở đầu theo từng câu, mềm và giàu cảm xúc hơn.
+- [x] Đồng nhất tuyệt đối khung cuối intro với khung đầu thiệp để chuyển cảnh liền mạch.
+- [x] Chồng lớp intro và khung đầu bằng cùng một ảnh, vị trí cắt và lớp phủ để loại bỏ chớp/giật.
+- [x] Rút gọn khoảng cách dọc và nhịp xuất hiện nội dung trên điện thoại lẫn máy tính.
+- [x] Đồng bộ toàn bộ giao diện sang tông xanh xám trầm theo ảnh mẫu, giữ nguyên nội dung và chuyển cảnh.
+- [x] Thêm ba ảnh cưới mới và cân lại thư viện ảnh thành lưới đồng nhất, không còn khoảng trống.
+- [x] Bỏ mã QR ở cuối trang.
+- [x] Hạ nền xanh sáng về cùng tông xanh xám trầm với ảnh mở đầu.
+- [x] Tăng độ tương phản chữ trên ảnh mở đầu và các lớp chữ phủ lên ảnh.
+- [x] Làm nền sáng dần xuống cuối trang và tăng độ nổi bật cho toàn bộ thông tin bên dưới.
+- [x] Chuyển nền cuối trang thành trắng hoàn toàn và làm chữ mở đầu rõ trên ảnh.
+- [x] Khôi phục độ rõ của toàn bộ câu chữ trong màn kể chuyện mở đầu.
+
+## Đang mở (chờ thông tin từ bạn)
+- [ ] 3 ảnh cưới thêm bị mất khi chuyển dự án — cần bạn tải lại ảnh.
+- [ ] Số điện thoại hai gia đình (đang để trống, nút gọi chưa bấm được).
+- [ ] Lời chúc hiện chỉ hiện tạm, mất khi tải lại trang — cần bật lưu trữ để giữ lại.
+- [ ] Chưa có phần xác nhận tham dự (RSVP) và thông tin gửi quà/chuyển khoản.
