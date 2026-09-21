@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
-import { CalendarPlus, ChevronLeft, ChevronRight, ChevronUp, Heart, MapPin, Maximize2, Music2, Navigation, Pause, Phone, Share2, Sparkles, X } from "lucide-react";
+import { CalendarPlus, ChevronLeft, ChevronRight, ChevronUp, Heart, MapPin, Maximize2, Music2, Navigation, Pause, Share2, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 import a1 from "@/assets/TVT00967.jpg";
 import a2 from "@/assets/TVT00864.jpg";
 import a3 from "@/assets/TVT01258.jpg";
@@ -118,6 +119,15 @@ function WeddingInvitation() {
     return () => window.clearTimeout(timer);
   }, [opened]);
 
+  useEffect(() => {
+    let active = true;
+    void supabase.from("wishes").select("id, guest_name, message").order("created_at", { ascending: false }).limit(100).then(({ data }) => {
+      if (active && data) setWishes(data);
+    });
+    return () => { active = false; };
+  }, []);
+
+
   const calendarUrl = useMemo(() => {
     const details = encodeURIComponent("Lễ thành hôn Thảo My & Xuân Tú tại tư gia nhà trai, Chợ Gồ, Thôn Thanh Cù, Xã Hiệp Cường, Tỉnh Hưng Yên.");
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("Lễ thành hôn Thảo My & Xuân Tú")}&dates=20261003T030000Z/20261003T050000Z&details=${details}`;
@@ -148,9 +158,13 @@ function WeddingInvitation() {
   async function submitWish(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); setWishStatus("Đang gửi...");
     const formElement = event.currentTarget;
-    const form = new FormData(formElement); const guest_name = String(form.get("wishName") ?? ""); const message = String(form.get("message") ?? "");
-    const wish = { id: crypto.randomUUID(), guest_name, message };
-    setWishes((current) => [wish, ...current]);
+    const form = new FormData(formElement);
+    const guest_name = String(form.get("wishName") ?? "").trim();
+    const message = String(form.get("message") ?? "").trim();
+    if (!guest_name || !message) { setWishStatus("Vui lòng nhập tên và lời chúc."); return; }
+    const { data, error } = await supabase.from("wishes").insert({ guest_name, message }).select("id, guest_name, message").single();
+    if (error || !data) { setWishStatus("Gửi chưa thành công, bạn thử lại giúp mình nhé."); return; }
+    setWishes((current) => [data, ...current]);
     setWishStatus("Lời chúc đã được gửi đến hai chúng mình.");
     formElement.reset();
   }
@@ -252,7 +266,7 @@ function EventCard({ label,time,date,lunar,address }: { label:string;time:string
   return <article className="rounded-sm border border-border bg-card p-6"><p className="text-xs uppercase tracking-[.18em] text-primary">{label}</p><h3 className="mt-4 text-3xl">{time}</h3><p className="mt-1 font-medium">{date}</p><p className="mt-1 text-sm text-muted-foreground">Âm lịch · {lunar}</p><div className="mt-6 flex gap-3 border-t border-border pt-5 text-sm leading-6 text-muted-foreground"><MapPin size={18} className="mt-1 shrink-0 text-accent"/>{address}</div></article>;
 }
 function FamilyCard({side,father,mother,address,query}:{side:string;father:string;mother:string;address:string;query:string}) {
-  return <article className="rounded-sm border border-border bg-card p-7 text-center"><p className="text-xs uppercase tracking-[.2em] text-primary">{side}</p><h3 className="mt-5 text-2xl">{father}<br/>{mother}</h3><p className="mx-auto mt-4 max-w-sm text-sm leading-6 text-muted-foreground">{address}</p><div className="mt-6 flex justify-center gap-3"><a title="Mở Google Maps" aria-label={`Chỉ đường đến ${side}`} href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`} target="_blank" rel="noreferrer" className="grid h-11 w-11 place-items-center rounded-full bg-primary text-primary-foreground"><Navigation size={18}/></a><a title="Mở Apple Maps" aria-label={`Mở Apple Maps đến ${side}`} href={`https://maps.apple.com/?q=${encodeURIComponent(query)}`} target="_blank" rel="noreferrer" className="grid h-11 w-11 place-items-center rounded-full border border-primary text-primary"><MapPin size={18}/></a><span title="Số điện thoại sẽ được cập nhật" aria-label="Số điện thoại chưa cập nhật" className="grid h-11 w-11 place-items-center rounded-full border border-border text-muted-foreground"><Phone size={18}/></span></div></article>;
+  return <article className="rounded-sm border border-border bg-card p-7 text-center"><p className="text-xs uppercase tracking-[.2em] text-primary">{side}</p><h3 className="mt-5 text-2xl">{father}<br/>{mother}</h3><p className="mx-auto mt-4 max-w-sm text-sm leading-6 text-muted-foreground">{address}</p><div className="mt-6 flex justify-center gap-3"><a title="Mở Google Maps" aria-label={`Chỉ đường đến ${side}`} href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`} target="_blank" rel="noreferrer" className="grid h-11 w-11 place-items-center rounded-full bg-primary text-primary-foreground"><Navigation size={18}/></a><a title="Mở Apple Maps" aria-label={`Mở Apple Maps đến ${side}`} href={`https://maps.apple.com/?q=${encodeURIComponent(query)}`} target="_blank" rel="noreferrer" className="grid h-11 w-11 place-items-center rounded-full border border-primary text-primary"><MapPin size={18}/></a></div></article>;
 }
 function Schedule({time,title,place}:{time:string;title:string;place:string}) { return <div className="grid grid-cols-[6rem_1fr] gap-5 border-t border-border py-7 first:border-t-0 sm:grid-cols-[9rem_1fr]"><span className="text-sm font-medium text-primary">{time}</span><div><h3 className="text-2xl">{title}</h3><p className="mt-2 text-sm text-muted-foreground">{place}</p></div></div>; }
 function Field({name,label,required,inputMode,light}:{name:string;label:string;required?:boolean;inputMode?:"tel";light?:boolean}) { return <label className="grid gap-2 text-sm">{label}<input name={name} required={required} inputMode={inputMode} maxLength={100} className={`h-12 rounded-sm border px-4 ${light ? "border-border bg-card" : "border-primary-foreground/20 bg-primary-foreground/5"}`}/></label>; }
