@@ -269,6 +269,12 @@ function Calendar() {
 function EventCard({ label,time,date,lunar,address }: { label:string;time:string;date:string;lunar:string;address:string }) {
   return <article className="rounded-sm border border-border bg-card p-6"><p className="text-xs uppercase tracking-[.18em] text-primary">{label}</p><h3 className="mt-4 text-3xl">{time}</h3><p className="mt-1 font-medium">{date}</p><p className="mt-1 text-sm text-muted-foreground">Âm lịch · {lunar}</p><div className="mt-6 flex gap-3 border-t border-border pt-5 text-sm leading-6 text-muted-foreground"><MapPin size={18} className="mt-1 shrink-0 text-accent"/>{address}</div></article>;
 }
+function openExternal(event: MouseEvent<HTMLAnchorElement>, url: string) {
+  event.preventDefault();
+  const win = window.open(url, "_blank", "noopener,noreferrer");
+  if (!win) window.top?.location.assign(url);
+}
+
 function FamilyCard({side,father,mother,address,mapsUrl,latLng,placeName}:{side:string;father:string;mother:string;address:string;mapsUrl:string;latLng:string;placeName:string}) {
   return <article className="rounded-sm border border-border bg-card p-7 text-center"><p className="text-xs uppercase tracking-[.2em] text-primary">{side}</p><h3 className="mt-5 text-2xl">{father}<br/>{mother}</h3><p className="mx-auto mt-4 max-w-sm text-sm leading-6 text-muted-foreground">{address}</p><div className="mt-6 flex justify-center gap-3"><a title="Mở Google Maps" aria-label={`Chỉ đường đến ${side}`} href={mapsUrl} target="_blank" rel="noreferrer" className="grid h-11 w-11 place-items-center rounded-full bg-primary text-primary-foreground"><Navigation size={18}/></a><a title="Mở Apple Maps" aria-label={`Mở Apple Maps đến ${side}`} href={`https://maps.apple.com/?ll=${latLng}&q=${encodeURIComponent(placeName)}`} target="_blank" rel="noreferrer" className="grid h-11 w-11 place-items-center rounded-full border border-primary text-primary"><MapPin size={18}/></a></div></article>;
 }
