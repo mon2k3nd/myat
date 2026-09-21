@@ -22,7 +22,7 @@
 - [x] Khôi phục độ rõ của toàn bộ câu chữ trong màn kể chuyện mở đầu.
 
 ## Đang mở (chờ thông tin từ bạn)
-- [ ] 3 ảnh cưới thêm bị mất khi chuyển dự án — cần bạn tải lại ảnh.
+- [x] 3 ảnh cưới thêm đã được bạn gửi lại và thêm vào thư viện (12 ảnh).
 - [x] Bỏ mục số điện thoại ở hai thẻ gia đình.
 - [x] Lời chúc được lưu lại thật, mọi khách đều xem được.
 - [ ] Chưa có phần xác nhận tham dự (RSVP) và thông tin gửi quà/chuyển khoản.
