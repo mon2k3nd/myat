@@ -26,3 +26,4 @@
 - [x] Bỏ mục số điện thoại ở hai thẻ gia đình.
 - [x] Lời chúc được lưu lại thật, mọi khách đều xem được.
 - [ ] Chưa có phần xác nhận tham dự (RSVP) và thông tin gửi quà/chuyển khoản.
+- Đổi nút mở đầu thành "Câu chuyện Hạnh Phúc".
