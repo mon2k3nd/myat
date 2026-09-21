@@ -23,6 +23,6 @@
 
 ## Đang mở (chờ thông tin từ bạn)
 - [ ] 3 ảnh cưới thêm bị mất khi chuyển dự án — cần bạn tải lại ảnh.
-- [ ] Số điện thoại hai gia đình (đang để trống, nút gọi chưa bấm được).
-- [ ] Lời chúc hiện chỉ hiện tạm, mất khi tải lại trang — cần bật lưu trữ để giữ lại.
+- [x] Bỏ mục số điện thoại ở hai thẻ gia đình.
+- [x] Lời chúc được lưu lại thật, mọi khách đều xem được.
 - [ ] Chưa có phần xác nhận tham dự (RSVP) và thông tin gửi quà/chuyển khoản.
