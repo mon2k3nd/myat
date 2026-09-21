@@ -119,6 +119,15 @@ function WeddingInvitation() {
     return () => window.clearTimeout(timer);
   }, [opened]);
 
+  useEffect(() => {
+    let active = true;
+    void supabase.from("wishes").select("id, guest_name, message").order("created_at", { ascending: false }).limit(100).then(({ data }) => {
+      if (active && data) setWishes(data);
+    });
+    return () => { active = false; };
+  }, []);
+
+
   const calendarUrl = useMemo(() => {
     const details = encodeURIComponent("Lễ thành hôn Thảo My & Xuân Tú tại tư gia nhà trai, Chợ Gồ, Thôn Thanh Cù, Xã Hiệp Cường, Tỉnh Hưng Yên.");
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("Lễ thành hôn Thảo My & Xuân Tú")}&dates=20261003T030000Z/20261003T050000Z&details=${details}`;
