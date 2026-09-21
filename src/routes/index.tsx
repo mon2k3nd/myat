@@ -11,9 +11,6 @@ import a6 from "@/assets/TVT01187.jpg";
 import a7 from "@/assets/TVT01136.jpg";
 import a8 from "@/assets/TVT01066.jpg";
 import a9 from "@/assets/TVT01057.jpg";
-import a10Asset from "@/assets/TVT00717.JPG.asset.json";
-import a11Asset from "@/assets/TVT00641.JPG.asset.json";
-import a12Asset from "@/assets/TVT00758.JPG.asset.json";
 import musicUrl from "@/assets/leDuong.mp3";
 
 export const Route = createFileRoute("/")({
