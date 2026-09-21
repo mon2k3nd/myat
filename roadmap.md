@@ -20,3 +20,9 @@
 - [x] Làm nền sáng dần xuống cuối trang và tăng độ nổi bật cho toàn bộ thông tin bên dưới.
 - [x] Chuyển nền cuối trang thành trắng hoàn toàn và làm chữ mở đầu rõ trên ảnh.
 - [x] Khôi phục độ rõ của toàn bộ câu chữ trong màn kể chuyện mở đầu.
+
+## Đang mở (chờ thông tin từ bạn)
+- [ ] 3 ảnh cưới thêm bị mất khi chuyển dự án — cần bạn tải lại ảnh.
+- [ ] Số điện thoại hai gia đình (đang để trống, nút gọi chưa bấm được).
+- [ ] Lời chúc hiện chỉ hiện tạm, mất khi tải lại trang — cần bật lưu trữ để giữ lại.
+- [ ] Chưa có phần xác nhận tham dự (RSVP) và thông tin gửi quà/chuyển khoản.
