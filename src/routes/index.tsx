@@ -12,6 +12,9 @@ import a6 from "@/assets/TVT01187.jpg";
 import a7 from "@/assets/TVT01136.jpg";
 import a8 from "@/assets/TVT01066.jpg";
 import a9 from "@/assets/TVT01057.jpg";
+import a10Asset from "@/assets/TVT00641.jpg.asset.json";
+import a11Asset from "@/assets/TVT00717.jpg.asset.json";
+import a12Asset from "@/assets/TVT00758.jpg.asset.json";
 import musicUrl from "@/assets/leDuong.mp3";
 
 export const Route = createFileRoute("/")({
@@ -27,7 +30,8 @@ export const Route = createFileRoute("/")({
 });
 
 const [img1, img2, img3, img4, img5, img6, img7, img8, img9] = [a1, a2, a3, a4, a5, a6, a7, a8, a9];
-const gallery = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+const [img10, img11, img12] = [a10Asset.url, a11Asset.url, a12Asset.url];
+const gallery = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12];
 const storyPhoto = [img4, img5, img6, img7];
 const weddingDate = new Date("2026-10-03T10:00:00+07:00").getTime();
 const introStory = [
