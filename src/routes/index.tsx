@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
-import { CalendarPlus, ChevronLeft, ChevronRight, ChevronUp, Heart, MapPin, Maximize2, Music2, Navigation, Pause, Phone, Share2, Sparkles, X } from "lucide-react";
+import { CalendarPlus, ChevronLeft, ChevronRight, ChevronUp, Heart, MapPin, Maximize2, Music2, Navigation, Pause, Share2, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 import a1 from "@/assets/TVT00967.jpg";
 import a2 from "@/assets/TVT00864.jpg";
 import a3 from "@/assets/TVT01258.jpg";
