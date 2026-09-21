@@ -183,7 +183,7 @@ function WeddingInvitation() {
         <p className="text-[10px] uppercase tracking-[.34em] text-foreground/85">The wedding film</p>
         <h2 className="mt-4 text-5xl leading-[.92] sm:text-6xl">Thảo My <span className="text-secondary">&</span><br/>Xuân Tú</h2>
         <p className="mt-5 font-display text-lg italic text-foreground/90">Một câu chuyện được viết bằng thương yêu</p>
-        <Button type="button" variant="hero" onClick={enterInvitation} aria-label="Bắt đầu câu chuyện của Thảo My và Xuân Tú" className="mt-8 min-w-44 rounded-full">Bắt đầu câu chuyện</Button>
+        <Button type="button" variant="hero" onClick={enterInvitation} aria-label="Bắt đầu câu chuyện của Thảo My và Xuân Tú" className="mt-8 min-w-44 rounded-full">Câu chuyện Hạnh Phúc</Button>
       </div>}
 
       {opening && <>
