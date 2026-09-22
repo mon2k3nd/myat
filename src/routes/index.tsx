@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent, type MouseEvent } from "react";
-import { CalendarPlus, ChevronLeft, ChevronRight, ChevronUp, Heart, MapPin, Maximize2, Music2, Navigation, Pause, Share2, Sparkles, X } from "lucide-react";
+import { CalendarPlus, ChevronLeft, ChevronRight, ChevronUp, Copy, Gift, Heart, MapPin, Maximize2, Music2, Navigation, Pause, Share2, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import a1 from "@/assets/TVT00967.jpg";
@@ -15,6 +15,8 @@ import a9 from "@/assets/TVT01057.jpg";
 import a10Asset from "@/assets/TVT00641.jpg.asset.json";
 import a11Asset from "@/assets/TVT00717.jpg.asset.json";
 import a12Asset from "@/assets/TVT00758.jpg.asset.json";
+import qrBrideAsset from "@/assets/qr-co-dau.jpg.asset.json";
+import qrGroomAsset from "@/assets/qr-chu-re.jpg.asset.json";
 import musicUrl from "@/assets/leDuong.mp3";
 
 export const Route = createFileRoute("/")({
