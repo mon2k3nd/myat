@@ -135,7 +135,7 @@ function WeddingInvitation() {
 
 
   const calendarUrl = useMemo(() => {
-    const details = encodeURIComponent("Lễ thành hôn Thảo My & Xuân Tú tại tư gia nhà trai, Chợ Gồ, Thôn Thanh Cù, Xã Hiệp Cường, Tỉnh Hưng Yên.");
+    const details = encodeURIComponent("Lễ thành hôn Thảo My & Xuân Tú tại tư gia nhà trai, Chợ Gò, Thôn Thanh Cù, Xã Hiệp Cường, Tỉnh Hưng Yên.");
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("Lễ thành hôn Thảo My & Xuân Tú")}&dates=20261003T030000Z/20261003T050000Z&details=${details}`;
   }, []);
 
@@ -158,7 +158,7 @@ function WeddingInvitation() {
     else { await navigator.clipboard.writeText(window.location.href); window.alert("Đã sao chép đường dẫn thiệp."); }
   }
   function addAppleCalendar() {
-    const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "BEGIN:VEVENT", "DTSTART:20261003T030000Z", "DTEND:20261003T050000Z", "SUMMARY:Lễ thành hôn Thảo My & Xuân Tú", "LOCATION:Chợ Gồ, Thôn Thanh Cù, Xã Hiệp Cường, Tỉnh Hưng Yên", "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+    const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "BEGIN:VEVENT", "DTSTART:20261003T030000Z", "DTEND:20261003T050000Z", "SUMMARY:Lễ thành hôn Thảo My & Xuân Tú", "LOCATION:Chợ Gò, Thôn Thanh Cù, Xã Hiệp Cường, Tỉnh Hưng Yên", "END:VEVENT", "END:VCALENDAR"].join("\r\n");
     const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar" })); a.download = "thao-my-xuan-tu.ics"; a.click(); URL.revokeObjectURL(a.href);
   }
   async function submitWish(event: FormEvent<HTMLFormElement>) {
@@ -247,10 +247,10 @@ function WeddingInvitation() {
     </section>
 
     <section id="date" className="light-section mx-auto max-w-5xl px-6 py-12 md:py-18"><div className="grid gap-8 md:grid-cols-2"><div className="reveal"><p className="text-[10px] uppercase tracking-[.3em] text-primary">Chương IV · Hẹn ngày</p><h2 className="mt-3 text-[2.6rem] leading-[1.1] md:text-5xl">Tháng Mười<br/>mình có hẹn</h2></div><div className="reveal"><Calendar /></div></div>
-      <div className="reveal mt-9 grid gap-4 md:grid-cols-2"><EventCard label="Tiệc mừng nhà gái" time="18:00 · Thứ Sáu" date="02.10.2026" lunar="22 tháng 08 năm Bính Ngọ" address="Cuối nhà thờ Cát Phú, Thôn Phú Bình, Xã Xuân Giang, Tỉnh Ninh Bình"/><EventCard label="Lễ thành hôn nhà trai" time="10:00 · Thứ Bảy" date="03.10.2026" lunar="23 tháng 08 năm Bính Ngọ" address="Chợ Gồ, Thôn Thanh Cù, Xã Hiệp Cường, Tỉnh Hưng Yên"/></div>
+      <div className="reveal mt-9 grid gap-4 md:grid-cols-2"><EventCard label="Tiệc mừng nhà gái" time="18:00 · Thứ Sáu" date="02.10.2026" lunar="22 tháng 08 năm Bính Ngọ" address="Cuối nhà thờ Cát Phú, Thôn Phú Bình, Xã Xuân Giang, Tỉnh Ninh Bình"/><EventCard label="Lễ thành hôn nhà trai" time="10:00 · Thứ Bảy" date="03.10.2026" lunar="23 tháng 08 năm Bính Ngọ" address="Chợ Gò, Thôn Thanh Cù, Xã Hiệp Cường, Tỉnh Hưng Yên"/></div>
     </section>
 
-    <section className="light-section bg-secondary/25 px-6 py-12 md:py-18"><div className="mx-auto max-w-5xl"><div className="reveal text-center"><p className="text-[10px] uppercase tracking-[.3em] text-primary">Hai nơi yêu thương</p><h2 className="mt-3 text-[2.6rem] leading-[1.1] md:text-5xl">Hai gia đình</h2></div><div className="reveal mt-8 grid gap-4 md:grid-cols-2"><FamilyCard side="Nhà gái" father="Ông Tống Văn Chức" mother="Bà Phạm Thị Ngân" address="Thôn Phú Bình, Xã Xuân Giang, Tỉnh Ninh Bình" mapsUrl="https://maps.app.goo.gl/qxJqTresCm2jmMmCA" latLng="20.3004027,106.4014558" placeName="Giáo xứ Cát Phú"/><FamilyCard side="Nhà trai" father="Ông Trần Xuân Sinh" mother="Bà Phạm Thị Kim Thủy" address="Chợ Gồ, Thôn Thanh Cù, Xã Hiệp Cường, Tỉnh Hưng Yên" mapsUrl="https://maps.app.goo.gl/dwpZY7EQveKdB5UZ6" latLng="20.7174985,106.0447678" placeName="Chợ Gồ"/></div></div></section>
+    <section className="light-section bg-secondary/25 px-6 py-12 md:py-18"><div className="mx-auto max-w-5xl"><div className="reveal text-center"><p className="text-[10px] uppercase tracking-[.3em] text-primary">Hai nơi yêu thương</p><h2 className="mt-3 text-[2.6rem] leading-[1.1] md:text-5xl">Hai gia đình</h2></div><div className="reveal mt-8 grid gap-4 md:grid-cols-2"><FamilyCard side="Nhà gái" father="Ông Tống Văn Chức" mother="Bà Phạm Thị Ngân" address="Thôn Phú Bình, Xã Xuân Giang, Tỉnh Ninh Bình" mapsUrl="https://maps.app.goo.gl/qxJqTresCm2jmMmCA" latLng="20.3004027,106.4014558" placeName="Giáo xứ Cát Phú"/><FamilyCard side="Nhà trai" father="Ông Trần Xuân Sinh" mother="Bà Phạm Thị Kim Thủy" address="Chợ Gò, Thôn Thanh Cù, Xã Hiệp Cường, Tỉnh Hưng Yên" mapsUrl="https://maps.app.goo.gl/dwpZY7EQveKdB5UZ6" latLng="20.7174985,106.0447678" placeName="Chợ Gò"/></div></div></section>
 
     <section id="schedule" className="light-section mx-auto max-w-4xl px-6 py-12 md:py-18"><div className="reveal"><p className="text-[10px] uppercase tracking-[.3em] text-primary">Chương V · Chương trình</p><h2 className="mt-3 text-[2.6rem] leading-[1.1] md:text-5xl">Hai ngày vui,<br/>một lời hẹn</h2></div><div className="reveal mt-8 space-y-0"><Schedule time="18:00 · 02.10" title="Tiệc mừng tại nhà gái" place="Tư gia nhà gái · Ninh Bình"/><Schedule time="10:00 · 03.10" title="Lễ thành hôn tại nhà trai" place="Tư gia nhà trai · Hưng Yên"/></div><div className="reveal mt-6 flex flex-wrap gap-3"><a href={calendarUrl} onClick={(e) => openExternal(e, calendarUrl)} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground"><CalendarPlus size={17}/> Google Calendar</a><button type="button" onClick={addAppleCalendar} className="inline-flex items-center gap-2 rounded-full border border-primary px-5 py-3 text-sm font-medium text-primary"><CalendarPlus size={17}/> Apple Calendar</button></div></section>
 
