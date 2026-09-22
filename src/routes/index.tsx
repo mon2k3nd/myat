@@ -15,8 +15,8 @@ import a9 from "@/assets/TVT01057.jpg";
 import a10Asset from "@/assets/TVT00641.jpg.asset.json";
 import a11Asset from "@/assets/TVT00717.jpg.asset.json";
 import a12Asset from "@/assets/TVT00758.jpg.asset.json";
-import qrBrideAsset from "@/assets/qr-co-dau.jpg.asset.json";
-import qrGroomAsset from "@/assets/qr-chu-re.jpg.asset.json";
+import qrBrideAsset from "@/assets/qr-co-dau.png.asset.json";
+import qrGroomAsset from "@/assets/qr-chu-re.png.asset.json";
 import musicUrl from "@/assets/leDuong.mp3";
 
 export const Route = createFileRoute("/")({
