@@ -25,5 +25,6 @@
 - [x] 3 ảnh cưới thêm đã được bạn gửi lại và thêm vào thư viện (12 ảnh).
 - [x] Bỏ mục số điện thoại ở hai thẻ gia đình.
 - [x] Lời chúc được lưu lại thật, mọi khách đều xem được.
-- [ ] Chưa có phần xác nhận tham dự (RSVP) và thông tin gửi quà/chuyển khoản.
+- [ ] Chưa có phần xác nhận tham dự (RSVP).
+- [x] Thêm mục gửi quà mừng với mã QR của cô dâu (VietinBank) và chú rể (Vietcombank), kèm nút sao chép số tài khoản.
 - Đổi nút mở đầu thành "Câu chuyện Hạnh Phúc".
